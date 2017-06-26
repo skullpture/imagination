@@ -1,0 +1,17 @@
+h3{
+  color : tomato;
+}
+.main-block{
+  background: tomato;
+  position: absolute;
+  width: 100%;
+  bottom:0;
+  left:0;
+}
+.contacts{
+  display: inline-block;
+  margin-left: 50px;
+}
+.white-header{
+  color: white;
+}

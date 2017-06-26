@@ -1,0 +1,15 @@
+a{
+  color: white;
+  line-height: 200%;
+  text-align: left;
+}
+.contact{
+  display: inline-block;
+}
+.contact:last-child{
+  margin-bottom:10px;
+}
+a:hover{
+  text-decoration: none;
+  font-weight: normal;
+}
