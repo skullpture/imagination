@@ -1,0 +1,34 @@
+.btn{
+  background-color: tomato;
+  border-color: #CD3115;
+}
+.btn:hover{
+  background-color: #CD3115;
+}
+#imaginate, #image, #sample{
+  margin: 0 auto;
+  display: block;
+}
+.imageCharsContainersWrapper{
+  width: 990px;
+  margin: 0 auto;
+}
+#accumulator, #imaginate, #image, .imageCharsContainersWrapper, #sample{
+  margin-bottom: 10px;
+}
+#image, #sample{
+  border: 2px solid tomato;
+}
+.imageChars{
+  width: 100px;
+}
+.imageCharsContainer{
+  display: inline-block;
+}
+#image{
+  display:none;
+}
+label.centralized-label{
+  display: block;
+  text-align: center;
+}

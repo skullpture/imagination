@@ -1,3 +1,67 @@
 <h3>I'm in the AppComponent</h3>
 <hr>
-<app-footer></app-footer>
+<div class="container">
+  <div class="raw">
+    <div class="col-xs-12">
+      <label>Your text for Imagination is</label>
+      <textarea id="accumulator"
+                class="form-control"
+                rows="13"></textarea>
+      <div class="imageCharsContainersWrapper">
+        <div class = "imageCharsContainer">
+          <label>Format</label>
+          <select (change)="onImageSizeChange($event)" [(ngModel)]="format" class="form-control imageChars">
+            <option *ngFor="let c of availableFormats" [ngValue]="c">{{ c }}</option>
+          </select>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Width</label>
+          <input (change)="onImageSizeChange($event)" type="number" min="666" max="6666" step="1" [(ngModel)]="imageWidth" class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Height</label>
+          <input type="number" [value]="imageHeight" disabled class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Line-height</label>
+          <input (change)="onTextShapeChange($event)" type="number" min="0" [max]="imageHeight" step="1" [(ngModel)]="lineHeight" class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Margin-left</label>
+          <input (change)="onTextShapeChange($event)" type="number" min="0" [max]="imageWidth" step="1" [(ngModel)]="marginLeft" class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Margin-top</label>
+          <input (change)="onTextShapeChange($event)" type="number" min="0" [max]="imageHeight" step="1" [(ngModel)]="marginTop" class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Text size</label>
+          <input (change)="onTextShapeChange($event)" type="number" min="10" [max]="imageHeight" step="1" [(ngModel)]="textSize" class="form-control imageChars"/>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Font</label>
+          <select [(ngModel)]="font" (change)="updateSample()" class="form-control imageChars">
+            <option *ngFor="let c of availableFonts" [ngValue]="c">{{ c }}</option>
+          </select>
+        </div>
+        <div class = "imageCharsContainer">
+          <label>Image format</label>
+          <select [(ngModel)]="imageFormat" class="form-control imageChars">
+            <option *ngFor="let c of availableImageFormats" [ngValue]="c">{{ c }}</option>
+          </select>
+        </div>
+      </div>
+      <button id="imaginate"
+              class = "btn btn-primary"
+              [disabled] = "!allowImagination"
+              (click) = "onImaginate(($event).target.parentElement.childNodes[3].value)">
+        {{ imaginateBtnText }}
+      </button>
+      <canvas id="image" width="800px" height="450px"></canvas>
+      <label class="centralized-label">The result will look like</label>
+      <canvas id="sample" width="800px" height="450px"></canvas>
+    </div>
+  </div>
+</div>
+
+<app-footer id="footer"></app-footer>
